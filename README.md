@@ -120,6 +120,19 @@
 
 - 각 번호를 조회한다. 한 번호를 기준으로 왼쪽 방향에서 가장 작은 수와 오른쪽 방향에서 가장 작은 수를 비교한다. 번호가 작은 풍선을 1번만 터트릴 수 있기 때문에 기준 번호가 구한 두 수 중 한 개보다 크기만 하면 남길 수 있다.
 
+### 점 찍기
+
+#### https://school.programmers.co.kr/learn/courses/30/lessons/140107
+
+#### https://github.com/HongYouBin/Programmers/blob/main/140107.cpp
+
+- b의 수를 정한다고 가정할 때 a의 최대 값은
+  > $$ \sqrt{d^2-(bk)^2/k^2} $$
+  > 이다. 따라서 b에 따른 최대 a를 구한 후 답을 더해주면 된다.
+- 잘 구현했는데도 오답이 발행했다. 알고보니 long long 타입과, int 타입을 연산해줘서 오류가 발생했다. long long 타입을 쓸 때 형 변환에 신경 쓰도록 하자.
+- C++ 제곱근 공식 cmath 헤더 추가하자.
+  - https://manniz.tistory.com/entry/C%EC%96%B8%EC%96%B4-%EB%A3%A8%ED%8A%B8%EC%A0%9C%EA%B3%B1%EA%B7%BC-%EC%9D%84-%EA%B5%AC%ED%95%98%EB%8A%94-2%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95sqrt-pow-%EC%86%8C%EC%8A%A4-%EC%BD%94%EB%93%9C
+
 ### 양궁 (카카오 기출)
 
 #### https://school.programmers.co.kr/learn/courses/30/lessons/92
