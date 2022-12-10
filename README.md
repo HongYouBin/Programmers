@@ -165,8 +165,21 @@
 - 우선순위 큐를 비교연산자 구현해야 했다.
   - https://hydroponicglass.tistory.com/169
 
+### 경주로 건설 (카카오 기출)
+
+#### https://school.programmers.co.kr/learn/courses/30/lessons/67259
+
+#### https://github.com/HongYouBin/Programmers/blob/main/67259.cpp
+
+- 투 포인터로 구현했다.
+- 앞 뒤 포인터로 모든 보석이 모인 연속한 집합을 구한 후 거리를 계산해준다. 가장 적은 거리를 가진 연속 집합이 정답이 된다.
+
 ### 양궁 (카카오 기출)
 
-#### https://school.programmers.co.kr/learn/courses/30/lessons/92
+#### https://school.programmers.co.kr/learn/courses/30/lessons/92342
 
-#### https://github.com/HongYouBin/Programmers/blob/main/92.cpp
+#### https://github.com/HongYouBin/Programmers/blob/main/92342.cpp
+
+- 완전탐색으로 구현했다.
+- 라이언이 피치보다 1개 더 쏘면 이기기 때문에 이겨야 하는 라운드를 정한 후 해당 라운드의 라이언의 화살의 수를 피치보다 1개 더 많이 쏘도록 만들었다.
+- dfs로도 구현 가능하다. 단계가 총 11개고 화살의 최대 수가 10개 이기 때문에 모든 경우의 수를 dfs로 구현 가능하다.
