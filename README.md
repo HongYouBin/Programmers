@@ -183,3 +183,12 @@
 - 완전탐색으로 구현했다.
 - 라이언이 피치보다 1개 더 쏘면 이기기 때문에 이겨야 하는 라운드를 정한 후 해당 라운드의 라이언의 화살의 수를 피치보다 1개 더 많이 쏘도록 만들었다.
 - dfs로도 구현 가능하다. 단계가 총 11개고 화살의 최대 수가 10개 이기 때문에 모든 경우의 수를 dfs로 구현 가능하다.
+
+### 멀쩡한 사각형
+
+#### https://school.programmers.co.kr/learn/courses/30/lessons/62048
+
+#### https://github.com/HongYouBin/Programmers/blob/main/62048.cpp
+
+- 대각선이 지나치는 총 개수가 가로, 새로 길이의 최대 공약수라는 사실을 알게되면 쉽게 구현 가능하다.
+  - https://kim519620.tistory.com/entry/%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95-feat-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-62048%EB%B2%88
