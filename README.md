@@ -192,3 +192,31 @@
 
 - 대각선이 지나치는 총 개수가 가로, 새로 길이의 최대 공약수라는 사실을 알게되면 쉽게 구현 가능하다.
   - https://kim519620.tistory.com/entry/%EB%A9%80%EC%A9%A1%ED%95%9C-%EC%82%AC%EA%B0%81%ED%98%95-feat-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-62048%EB%B2%88
+
+### 불량 사용자(카카오 기출)
+
+#### https://school.programmers.co.kr/learn/courses/30/lessons/64064
+
+#### https://github.com/HongYouBin/Programmers/blob/main/64064_1.cpp
+
+#### https://github.com/HongYouBin/Programmers/blob/main/64064_2.cpp
+
+#### https://github.com/HongYouBin/Programmers/blob/main/64064_3.cpp
+
+- 처음에 이진 탐색으로 풀어야 하나 고민했다. 하지만 배열의 최대 크기가 8이기 때문에 굳이 이진 탐색으로 풀 필요가 없다는 사실을 깨달았고, 완전 탐색으로 방향을 바꾸었다.
+- 첫 번째 방법은 틀린 접근이었다. banned_id 크기만큼 user_id에서 스트링을 뽑는다. 뽑은 스트링에서 '*'를 붙여 만들 수 있는 모든 스트링을 만들어 맵에 저장한 후 banned_id에 map을 조회하도록 했다. 문제는 하나의 user_id에서 2개 이상의 banned_id를 만족하는 *을 붙인 스트링을 생성할 수 있다는 것이다. 예를 들어 banned_id가 \*rodo만 갖고 있고 user_id가 prodo, crodo라고 하면 1개의 banned_id에 2개의 user_id가 만족하게 된다는 문제점이 있다. 따라서 해당 접근 방법은 틀렸다.
+  - https://github.com/HongYouBin/Programmers/blob/main/64064_1.cpp
+- 두 번째 접근도 잘못됐다. 마찬가지로 user_id에서 banned_id 크기만큼 문자열을 뽑았다. 그 후 for문으로 모든 user 문자열과, banned 문자열을 비교하는 방법으로 구현했다. 문제점은 한 개의 banned_id가 user_id를 선점하면, 다른 banned_id가 선점된 user_id를 선택하지 못한다는 것이다. 예를 들어보겠다. user_id가 frodo, crodo이고 banned_id가 fr*d*, *rodo이라고 가정하자. frodo가 *rodo, fr*d* 둘 다 적용 가능하고 crodo는 *rodo만 적용 가능하다. 이때 frodo가 *rodo를 선점한다고 할 때 crodo는 아무 것도 선점하지 못하게 된다. 따라서 답인 frodo와 crodo가 나오지 못하고, frodo만 나오게 된다.
+  - https://github.com/HongYouBin/Programmers/blob/main/64064_2.cpp
+- 따라서 dfs를 사용한 조합으로 구현해야 한다. dfs를 사용해서 모든 경우의 수를 따져줘야 하고, 제재 아이디가 생성되면 생성된 값을 조합으로(순서에 상관 없이) 저장해야 한다. 따라서 dfs로 user_id가 banned_id를 기준으로 일치하는지 확인한 후 다른 user_id와도 일치하는지 확인하는 방법으로 구현했다. 두 문자열이 일치하면 bitmap 마스킹으로 넘겨 조합으로 순서에 상관 없이 map에 저장되도록 만들었다.
+  - https://github.com/HongYouBin/Programmers/blob/main/64064_3.cpp
+
+### 구명보트
+
+#### https://school.programmers.co.kr/learn/courses/30/lessons/42885
+
+#### https://github.com/HongYouBin/Programmers/blob/main/42885.cpp
+
+- 구명보트에 최대 2명이라는 조건을 보지 못해 오름차순 정렬 후 작은 수부터 구명보트를 채우려고 했다. 물론 오답이 발생했다.
+- 최대 2명이라는 조건 때문에 몸무게가 제일 작은 사람과 제일 큰 사람을 태워야 한다. 2명을 몸무게가 작은 순부터 채우면 순서가 뒤로 갈수록 큰 사람끼리 2명을 채워야 하기 때문에 무게 제한을 넘게 된다. 따라서 작은 사람과, 큰 사람을 태워야 최소가 된다.
+- 문제의 조건을 꼼꼼하게 따져봐야 한다.
