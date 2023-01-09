@@ -1,6 +1,6 @@
 # Programmers
 
-### 양과 늑대 92343 (카카오 기출)
+### 양과 늑대 92343 (카카오 기출, 다시 풀 것)
 
 #### https://school.programmers.co.kr/learn/courses/30/lessons/92343
 
@@ -78,7 +78,7 @@
 - 최대한 작은 배열을 생성해 return해야 하는 조건이 까다로웠다. 최대 Y값을 구한 y값에서 뺀다. 구한 x값을 최소 x값에 빼는 방법으로 구현했다.
 - core dumped가 발생해서, 그 이유를 알고 처리하는 과정이 까다로웠다. 알고보니 두 직선의 교점을 구하는 방법에서 각각의 A, B, C를 곱해줘야 하는데, 그 과정에서 최대값이 10^10 이 된다. int의 최대 값이 10^9이기 때문에 long long 타입을 사용해야한다. core dumped가 메모리에 잘못되게 접근했기 때문에 발생하는데, 지금은 오버플로우 때문에 발생한듯 싶다. 변수의 최대값을 미리 구한 후 데이터 타입을 고려해줘야 하고, 문제 없이 풀었는데도 메모리에 오류가 발생하면 데이터 타입을 적절히 설정했나 검토해야 한다.
 
-### k진수에서 소수 만들기 (카카오 기출)
+### k진수에서 소수 만들기 (카카오 기출, 다시 풀 것)
 
 #### https://school.programmers.co.kr/learn/courses/30/lessons/92335
 
@@ -133,7 +133,7 @@
 - C++ 제곱근 공식 cmath 헤더 추가하자.
   - https://manniz.tistory.com/entry/C%EC%96%B8%EC%96%B4-%EB%A3%A8%ED%8A%B8%EC%A0%9C%EA%B3%B1%EA%B7%BC-%EC%9D%84-%EA%B5%AC%ED%95%98%EB%8A%94-2%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95sqrt-pow-%EC%86%8C%EC%8A%A4-%EC%BD%94%EB%93%9C
 
-### 스타 수열
+### 스타 수열(다시 풀 것)
 
 #### https://school.programmers.co.kr/learn/courses/30/lessons/70130
 
