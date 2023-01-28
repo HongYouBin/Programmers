@@ -290,9 +290,9 @@ https://github.com/HongYouBin/Programmers/blob/main/12927.cpp
 - [ ] 2회차
 - [ ] 3회차
 
-https://www.acmicpc.net/problem/12927
+https://school.programmers.co.kr/learn/courses/30/lessons/152996
 
-https://github.com/HongYouBin/baekjoon/blob/master/12927.cpp
+https://github.com/HongYouBin/Programmers/blob/main/152996.cpp
 
 - 처음 접근 방법
   1. weights가 10^5이기 때문에 완전탐색 사용불가능하다고 판단했다. O(N)안에 처리해야 한다.
@@ -303,3 +303,40 @@ https://github.com/HongYouBin/baekjoon/blob/master/12927.cpp
 - 작은 수로 큰 수를 만드는 방법이 총 2곱, 3/2곱, 4/3곱 총 3가지 이다. 따라서 각 곱을 한 후 수가 있나 확인해주면 된다.
 - 문제를 정확하게 읽지 않았고, 꼼꼼하게 생각하지 않아서 오답이 발생한 것 같다. 신중하게 읽고 생각해야 한다.
 - 다른 사람의 풀이를 보니 그냥 2중 for문으로 각 수를 탐색하면서 기준 수를 정하고(i) 다른 수(j)를 탐색할 때 겹치는게 있나 확인하는 방법으로 구했다. O(N/2)안에 해결 가능하다.
+
+### 152995 인사고과 (다른 방법으로도 풀어볼 것)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/152995
+
+https://github.com/HongYouBin/Programmers/blob/main/152995.cpp
+
+- 모든 scores에 대해 완전 탐색하면 O(N\*N)의 시간복잡도로 TLE가 발생한다.
+- a, b가 0부터 100000이기 때문에 a의 숫자를 인덱스로 하는 배열을 만든다. 배열에는 a가 쌍으로 갖고 있는 수중 가장 큰 b를 넣어준다. ex) a, b -> arr[a] = max(arr[a], b) 그러면 다른 a1, b1가 성과급을 받을 수 있나 따질 때 배열의 인덱스를 a1+1부터 살펴보면 된다. 인덱스 0부터 a1까지는 a1보다 작거나 같기 때문에 살펴보지 않아도 된다.
+- 다른 사람의 풀이를 보니 a를 기준으로 내림차순 정렬을 한 후 인덱스 i를 기준으로 0부터 i-1까지만 살펴보는 방법으로 구현했다. i부터 끝까지는 a보다 작거나 같기 때문에 살펴볼 필요가 없다.
+- a를 기준으로 내림차순 정렬을 한 후 scores를 조회하면서 가장 큰 b를 갱신한다. 내림차순으로 정렬했기 때문에 당연히 a는 앞보다 작기 때문에 확인할 필요가 없고 b는 가장 큰 b만 살펴보면 된다. 가장 큰 b보다 작으면 성과급을 받을 수 없다.
+
+### 154538 숫자 변환하기
+
+https://school.programmers.co.kr/learn/courses/30/lessons/154538
+
+https://github.com/HongYouBin/Programmers/blob/main/154538.cpp
+
+- queue 자료구조를 이용해서 풀었다.
+
+### 154539 뒤에 있는 큰 수
+
+https://school.programmers.co.kr/learn/courses/30/lessons/154539
+
+https://github.com/HongYouBin/Programmers/blob/main/154539.cpp
+
+- 우선순위 큐를 사용했다. 가장 작은 수를 우선순위로 갖는 큐를 생성하고 배열을 조회하면서 현재 인덱스가 가르키고 있는 수(x) 보다 작은 수들을 다 빼주고 답을 x로 설정하고 x를 우선순위 큐에 넣는 방법으로 구현했다.
+- 다른 사람의 풀이를 보니 스택을 사용했다. 스택에 수를 쌓은 후 스택에 있는 수보다 큰 수가 나오면 while문을 사용해서 빼주는 방법을 사용했다.
+- 문제를 볼 때 다양한 자료구조(큐, 스택, 우선순위 큐)로 풀 수 있는지 고민해야 한다.
+
+### 154540 무인도 여행
+
+https://school.programmers.co.kr/learn/courses/30/lessons/154540
+
+https://github.com/HongYouBin/Programmers/blob/main/154540.cpp
+
+- 완전탐색으로 풀었다. bfs 알고리즘 사용했다.
