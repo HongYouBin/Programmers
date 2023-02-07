@@ -388,3 +388,15 @@ https://github.com/HongYouBin/Programmers/blob/main/155651.cpp
   - 끝나는 시간을 기준으로 정렬하면 안되는 이유 : https://hillier.tistory.com/115 빨리 시작하는 강의를 빈 강의실에 넣는게 더 이득이다.
 - 정답) 시작 시간을 기준으로 오름차순 정렬한 후 순서대로 우선순위 큐에 넣는다. 우선순위 큐는 끝나는 시간이 짧을수록 루트에 오도록 설정한다. 큐의 최고 사이즈가 답이 된다.
 - 시간을 억지로 클래스로 생성했는데 비효율적이다. 분으로 바꿔 계산하는게 구현이 더 쉽다.
+
+### 142085 디펜스 게임
+
+https://school.programmers.co.kr/learn/courses/30/lessons/142085
+
+https://github.com/HongYouBin/Programmers/blob/main/142085.cpp
+
+- 그리디로 구현했다.
+- 언제 무적권을 사용하는지에 따라 진행할 수 있는 라운드가 달라진다. 따라서 enemy가 높은 순서대로 무적권을 사용해야 한다.
+- 우선순위 큐를 사용하여 현재까지 진행한 라운드에서 enemy가 가장 큰 k개의 변수를 넣어 저장하도록 했다. i번까지 진행했을 때 우선순위 큐에서 가장 작은 수와 enemy[i]의 값을 비교하여 enemy[i]가 작으면 sum을 더해주고 반대면 우선순위 큐의 값을 sum에 더한 후 pop하고, enemy[i]를 우선순위 큐에 넣어주는 방법을 이용했다.
+
+programmers) https://school.programmers.co.kr/learn/courses/30/lessons/148653
