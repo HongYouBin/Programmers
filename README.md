@@ -375,7 +375,7 @@ https://github.com/HongYouBin/Programmers/blob/main/84512.cpp
 
 ### 155651 호텔 대실
 
-- [ ] 1회차
+- [x] 1회차
 - [ ] 2회차
 - [ ] 3회차
 
@@ -399,4 +399,47 @@ https://github.com/HongYouBin/Programmers/blob/main/142085.cpp
 - 언제 무적권을 사용하는지에 따라 진행할 수 있는 라운드가 달라진다. 따라서 enemy가 높은 순서대로 무적권을 사용해야 한다.
 - 우선순위 큐를 사용하여 현재까지 진행한 라운드에서 enemy가 가장 큰 k개의 변수를 넣어 저장하도록 했다. i번까지 진행했을 때 우선순위 큐에서 가장 작은 수와 enemy[i]의 값을 비교하여 enemy[i]가 작으면 sum을 더해주고 반대면 우선순위 큐의 값을 sum에 더한 후 pop하고, enemy[i]를 우선순위 큐에 넣어주는 방법을 이용했다.
 
-programmers) https://school.programmers.co.kr/learn/courses/30/lessons/148653
+### 150368 이모티콘 할인 (카카오 기출)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/150368
+
+https://github.com/HongYouBin/Programmers/blob/main/150368.cpp
+
+- 완전탐색으로 구현했다.
+- 이모티콘의 개수가 7개이고 각 이모티콘마다 4개의 할인율을 설정할 수 있어서 4^7의 시간안에 이모티콘의 모든 할인율을 설정할 수 있었고 각 유저가 이모티콘이나 서비스를 구입하는지 따지는 경우가 최대 100 \* 7 이기 때문에 시간 안에 문제가 해결 가능했다.
+- 소수나 분수를 계산할 때 최대한 큰 수가 되도록 곱을 먼저하고 나머지를 마지막에 해야한다.
+
+### 150368 이모티콘 할인 (카카오 기출)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/150368
+
+https://github.com/HongYouBin/Programmers/blob/main/150368.cpp
+
+- 완전탐색으로 구현했다.
+- 이모티콘의 개수가 7개이고 각 이모티콘마다 4개의 할인율을 설정할 수 있어서 4^7의 시간안에 이모티콘의 모든 할인율을 설정할 수 있었고 각 유저가 이모티콘이나 서비스를 구입하는지 따지는 경우가 최대 100 \* 7 이기 때문에 시간 안에 문제가 해결 가능했다.
+- 소수나 분수를 계산할 때 최대한 큰 수가 되도록 곱을 먼저하고 나머지를 마지막에 해야한다.
+
+### 148653 마법의 엘리베이터
+
+- [x] 1회차
+- [ ] 2회차
+- [ ] 3회차
+
+https://school.programmers.co.kr/learn/courses/30/lessons/148653
+
+https://github.com/HongYouBin/Programmers/blob/main/148653.cpp
+
+- 각 자리수마다 올림을 할 것인지 내림을 할 것인지 따져줘야 한다. storey가 100,000,000 이하이기 때문에 경우의 수는 2^10 이하이고 시간안에 해결 가능하다.
+- 메모이제이션을 사용하면 더 빠르게 구현이 가능하다. 다음 단계로 넘어간 값 중 최소값을 계산하여 메모이제이션을 활용할 수 있다.
+- 정수에서 각 자리의 숫자를 분리해야 할 때 모듈러 연산과 나머지 연산을 활용하자 num % 10 을 통해 작은 자리 숫자를 분리할 수 있고 num / 10 후 다시 10을 곱하면 남은 숫자를 구할 수 있다.
+- 10을 제곱한 수 중 num보다 작으면서 가장 높은 값을 알고 싶을 때 int base = 0; while (pow(10, base + 1) <= curNum) base++; 식을 활용하자 구한 base로 pow() 함수를 활용할 수 있다.
+
+### 77885 2개 이하로 다른 비트
+
+https://school.programmers.co.kr/learn/courses/30/lessons/77885
+
+https://github.com/HongYouBin/Programmers/blob/main/77885.cpp
+
+- 짝수일 때 + 1해주면 된다. 간단하게 해결 가능하다.
+- 홀수일 때가 문제이다. 홀수를 비트로 바꾼 후 문제에 맞게 바꾸면 일정한 규칙이 발생한다. 가장 왼쪽에서 가까운 0을 1로 바꾼 후 바로 왼쪽 1을 0으로 바꾸면 정답이 된다. 가까운 0을 찾기 위해 shift연산을 썼고 어느 정도 맞았지만 시간 초과가 발생했다.
+- shift 연산을 최대한 줄이고 바로 2를 곱하는 방법을 사용했는데 정답이 됐다. 생각보다 shift 연산의 오버헤드가 큰 듯하다.
