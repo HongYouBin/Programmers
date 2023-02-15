@@ -443,3 +443,53 @@ https://github.com/HongYouBin/Programmers/blob/main/77885.cpp
 - 짝수일 때 + 1해주면 된다. 간단하게 해결 가능하다.
 - 홀수일 때가 문제이다. 홀수를 비트로 바꾼 후 문제에 맞게 바꾸면 일정한 규칙이 발생한다. 가장 왼쪽에서 가까운 0을 1로 바꾼 후 바로 왼쪽 1을 0으로 바꾸면 정답이 된다. 가까운 0을 찾기 위해 shift연산을 썼고 어느 정도 맞았지만 시간 초과가 발생했다.
 - shift 연산을 최대한 줄이고 바로 2를 곱하는 방법을 사용했는데 정답이 됐다. 생각보다 shift 연산의 오버헤드가 큰 듯하다.
+
+### 76502 괄호 회전하기
+
+https://school.programmers.co.kr/learn/courses/30/lessons/76502
+
+https://github.com/HongYouBin/Programmers/blob/main/76502.cpp
+
+- 주어진 조건에 맞춰 시뮬레이션 하면 된다. stack 자료구조 활용했다.
+
+### 12952 N-Queen
+
+https://school.programmers.co.kr/learn/courses/30/lessons/12952
+
+https://github.com/HongYouBin/Programmers/blob/main/12952.cpp
+
+- 완전탐색을 이용했다.
+- 2차원 배열을 생성한 후 퀸을 빈 칸에 놓은 후 유효한지 체크하는 방법이 처음에 떠올랐다가 더 효율적인 방법을 생각해냈다.
+- 각 행에 1개만 둬야 하기 때문에 재귀에서 row를 1씩 증가시켜 겹치지 않게 설정했다. 또한 column도 겹치면 안되기 때문에 column을 사용했는지 확인하는 배열을 만든 후 조건을 따졌다.
+- 문제는 대각선을 확인하는 방법이다. 체스판을 보면서 한가지 규칙이 떠올랐는데 행과 열 각각 0부터 증가시켜 번호를 매긴 후 각 칸을 행과 열에 적힌 번호의 합을 구하면 왼쪽 아래에서 오른쪽 위로 향하는 대각선의 값이 일치한다는 사실을 알게 되었다. 반대로 열을 0부터 증가시키고 행은 n-1부터 0까지 감소시키는 번호를 매긴 후 각 칸의 행과 열에 적힌 번호의 합을 구하면 왼쪽 위에서 오른쪽 아래로 향하는 대각선이 일치한다. 따라서 이런 규칙을 활용하면 대각선을 방문했는지 안했는지 확인 가능하다.
+
+### 12952 N-Queen
+
+https://school.programmers.co.kr/learn/courses/30/lessons/12952
+
+https://github.com/HongYouBin/Programmers/blob/main/12952.cpp
+
+- 완전탐색을 이용했다.
+- 2차원 배열을 생성한 후 퀸을 빈 칸에 놓은 후 유효한지 체크하는 방법이 처음에 떠올랐다가 더 효율적인 방법을 생각해냈다.
+- 각 행에 1개만 둬야 하기 때문에 재귀에서 row를 1씩 증가시켜 겹치지 않게 설정했다. 또한 column도 겹치면 안되기 때문에 column을 사용했는지 확인하는 배열을 만든 후 조건을 따졌다.
+- 문제는 대각선을 확인하는 방법이다. 체스판을 보면서 한가지 규칙이 떠올랐는데 행과 열 각각 0부터 증가시켜 번호를 매긴 후 각 칸을 행과 열에 적힌 번호의 합을 구하면 왼쪽 아래에서 오른쪽 위로 향하는 대각선의 값이 일치한다는 사실을 알게 되었다. 반대로 열을 0부터 증가시키고 행은 n-1부터 0까지 감소시키는 번호를 매긴 후 각 칸의 행과 열에 적힌 번호의 합을 구하면 왼쪽 위에서 오른쪽 아래로 향하는 대각선이 일치한다. 따라서 이런 규칙을 활용하면 대각선을 방문했는지 안했는지 확인 가능하다.
+
+### 70129 이진 변환 반복
+
+https://school.programmers.co.kr/learn/courses/30/lessons/70129
+
+https://github.com/HongYouBin/Programmers/blob/main/70129.cpp
+
+- 주어진 조건에 맞춰 구현했다.
+- 2진수를 만들 때 재귀를 사용했다. 앞으로 이진수를 만들 일이 있을 때 재귀를 활용해야 한다. 처음에 종료조건을 잘못 설정해줬다. num/2가 0이 될 때 종료하도록 했는데 num이 0이 될 때 종료되도록 바꿔야 한다.
+
+```
+string makeBinary(int num, string s) {
+	if (num == 0) return s;
+
+	char newS = (num % 2) + '0';
+	return makeBinary(num / 2, newS + s);
+}
+```
+
+메뉴 리뉴얼) 72411 https://school.programmers.co.kr/learn/courses/30/lessons/72411
