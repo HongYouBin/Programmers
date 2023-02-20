@@ -492,4 +492,12 @@ string makeBinary(int num, string s) {
 }
 ```
 
+### 70129 이진 변환 반복
+
+https://school.programmers.co.kr/learn/courses/30/lessons/159993
+
+https://github.com/HongYouBin/Programmers/blob/main/159993.cpp
+
+- bfs 알고리즘 사용했다. 시작점부터 레버까지 최단거리 + 레버부터 출구까지 최단거리 구하면 된다.
+
 메뉴 리뉴얼) 72411 https://school.programmers.co.kr/learn/courses/30/lessons/72411
