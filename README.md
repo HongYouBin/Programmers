@@ -500,4 +500,47 @@ https://github.com/HongYouBin/Programmers/blob/main/159993.cpp
 
 - bfs 알고리즘 사용했다. 시작점부터 레버까지 최단거리 + 레버부터 출구까지 최단거리 구하면 된다.
 
+### 68936 쿼드압축 후 개수 세기
+
+https://school.programmers.co.kr/learn/courses/30/lessons/68936
+
+https://github.com/HongYouBin/Programmers/blob/main/68936.cpp
+
+- 분할 정복 알고리즘을 사용했다.
+
+### 68645 삼각 달팽이
+
+https://school.programmers.co.kr/learn/courses/30/lessons/68645
+
+https://github.com/HongYouBin/Programmers/blob/main/68645.cpp
+
+- 사이즈가 n일 때 한바퀴 돈 후 생성된 삼각형 안에 n-3 사이즈로 삼각형이 생성되는 규칙을 찾았다. 해당 규칙을 이용해 구현하였다.
+- 다른 사람의 코드를 보니 더 간단하게 구현했다. 사이즈가 n일 때 n개의 직선이 생기고 직선이 한번 끝날 때마다 크기가 1씩 줄어드는 특징을 이용했다.
+
+```
+ for (int i = 0; i < n; i++) {
+        for (int j = p;j >= 1; j--) {
+            if(i%3==0) {
+                arr[++x][y] = k;
+            } else if (i % 3 == 1) {
+                arr[x][++y] = k;
+            } else if (i % 3 == 2) {
+                arr[--x][--y] = k;
+            }
+            k++;
+        }
+        p--;
+    }
+```
+
+### 67257 수식 최대화(카카오 기출)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/67257
+
+https://github.com/HongYouBin/Programmers/blob/main/67257_1.cpp
+https://github.com/HongYouBin/Programmers/blob/main/67257_2.cpp
+
+- 연산자와 피연산자를 배열로 받은 뒤 순열로 연산자의 우선순위를 정한 후 계산했다. vector의 erase 연산이 오버헤드가 크지만 expression의 크기가 100밖에 되지 않아 완전탐색으로 풀이가 가능했다.
+- 1번은 permutation을 함수로 직접 구현한 방법이다. 2번은 오름차순 후 next_permutation으로 순열을 구현했다. 둘 다 알고있는게 좋긴 하나 2번 방법이 구현이 간단하기 때문에 이용하는 것이 좋아보인다. 자바로 풀 때 next_permutation()이 지원되지 않아 재귀로 직접 구현했고 그 방법이 익숙해져 있었다. 자바로 문제를 풀다 C++로 풀다보니 next_permutation을 써야겠다는 생각을 못했다. 잊지말고 활용해야 한다.
+
 메뉴 리뉴얼) 72411 https://school.programmers.co.kr/learn/courses/30/lessons/72411
