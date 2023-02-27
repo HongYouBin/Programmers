@@ -543,4 +543,22 @@ https://github.com/HongYouBin/Programmers/blob/main/67257_2.cpp
 - 연산자와 피연산자를 배열로 받은 뒤 순열로 연산자의 우선순위를 정한 후 계산했다. vector의 erase 연산이 오버헤드가 크지만 expression의 크기가 100밖에 되지 않아 완전탐색으로 풀이가 가능했다.
 - 1번은 permutation을 함수로 직접 구현한 방법이다. 2번은 오름차순 후 next_permutation으로 순열을 구현했다. 둘 다 알고있는게 좋긴 하나 2번 방법이 구현이 간단하기 때문에 이용하는 것이 좋아보인다. 자바로 풀 때 next_permutation()이 지원되지 않아 재귀로 직접 구현했고 그 방법이 익숙해져 있었다. 자바로 문제를 풀다 C++로 풀다보니 next_permutation을 써야겠다는 생각을 못했다. 잊지말고 활용해야 한다.
 
+### 42890 후보키 (카카오 기출)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/42890
+
+https://github.com/HongYouBin/Programmers/blob/main/42890.cpp
+
+- 비트맵과 부분 집합을 활용한 완전 탐색으로 문제를 풀었다.
+- 선택한 후보키의 집합이 다른 후보키의 집합에 포함되지 않도록 처리하는 부분이 가장 까다로웠다. 이미 확인이 끝난 후보키를 저장한 벡터인 candid에서 하나씩 비교를 해주어야 했는데 어떻게 비교를 해야 하나 고민했다. 비트의 속성을 활용하여 금방 아이디어를 떠올렸다.
+
+```
+  // 비트 a가  비트 b에 포함되는지 확인해야 할 때
+  (a&b) == a //a와 b를 and 연산한 값이 a와 같으면 a는 b에 포함된다.
+  // 비트 a가 비트 b를 포함하는지 확인해야 할 때
+  (a|b) == b
+```
+
+- 위의 비트가 포함하는지 확인하는 방법은 유용하게 사용할 수 있기 때문에 잊지 말아야 한다.
+
 메뉴 리뉴얼) 72411 https://school.programmers.co.kr/learn/courses/30/lessons/72411
