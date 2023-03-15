@@ -561,4 +561,57 @@ https://github.com/HongYouBin/Programmers/blob/main/42890.cpp
 
 - 위의 비트가 포함하는지 확인하는 방법은 유용하게 사용할 수 있기 때문에 잊지 말아야 한다.
 
-메뉴 리뉴얼) 72411 https://school.programmers.co.kr/learn/courses/30/lessons/72411
+### 72411 메뉴 리뉴얼 (카카오 기출)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/72411
+
+https://github.com/HongYouBin/Programmers/blob/main/72411.cpp
+
+- 부분순열로 만들 수 있는 모든 메뉴의 경우의 수를 구한 후 맵에 넣어주는 방법으로 구현했다.
+
+### 72412 순위 검색 (카카오 기출)
+
+https://school.programmers.co.kr/learn/courses/30/lessons/72412
+
+https://github.com/HongYouBin/Programmers/blob/main/72412.cpp
+
+- [x] 1회차
+- [ ] 2회차
+- [ ] 3회차
+
+- 처음에 info string의 각각 항목에 대해 비트를 설정한 후(ex. cpp는 1의 자리가 1, java는 1의 자리가 0 ... ) 배열을 생성해 해당 비트 값을 넣는 방법으로 풀려고 했다. 하지만 시간 초과가 발생하고 구현이 까다로워 해당 방법으로 풀지 못했다.
+- 간단하게 구현하기 위해서 info에 string의 각 조건을 비트로 표현하지 말고 그냥 하나로 붙인 후 맵에 넣는 방법으로 구현할 수 있다. 맵에 넣을 때 값을 여러개 저장해야 하기 때문에 `map<string, vector<int>>` 로 설정해야 한다. 이때 info vector안에 있는 string을 띄어쓰기 단위로 직접 구현하기 번거로운데 이를 해결하기 위해 sstream을 사용하여 띄어쓰기 단위로 나눠 저장하면 된다.
+  - https://myprivatestudy.tistory.com/48
+
+```
+ stringstream ss(s);
+        string input = "";
+        vector<string> sVt(4);
+
+        for (int i = 0; i < 4; ++i) {
+            ss >> input;
+            sVt[i] = input;
+        }
+        ss >> input;
+        int score = stoi(input);
+        fillMap(sVt, score);
+```
+
+- 시간초과를 막기 위해 이분탐색을 하면서 O(logN)안에 문제를 해결해야 한다. map안에 저장한 vector값을 정렬한 후 query로 찾는 조건을 맵에 대입하면서 이분탐색을 진행하면 문제를 시간안에 해결할 수 있다.
+
+```
+for (auto& s : query) {
+        stringstream ss(s);
+        string input;
+        string searchStr = "";
+        for (int i = 0; i < 7; ++i) {
+            ss >> input;
+            if (input == "and") continue;
+            searchStr += input;
+        }
+        ss >> input;
+        int score = stoi(input);
+        int idx = lower_bound(mp[searchStr].begin(), mp[searchStr].end(), score) - mp[searchStr].begin();
+        ans.push_back(mp[searchStr].size() - idx - 1);
+    }
+```
