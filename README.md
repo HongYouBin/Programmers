@@ -615,3 +615,18 @@ for (auto& s : query) {
         ans.push_back(mp[searchStr].size() - idx - 1);
     }
 ```
+
+### 87694 아이템줍기
+
+https://school.programmers.co.kr/learn/courses/30/lessons/87694
+
+https://github.com/HongYouBin/Programmers/blob/main/87694.cpp
+
+- [x] 1회차
+- [ ] 2회차
+- [ ] 3회차
+
+- bfs/dfs보다 어떻게 배열을 활용하여 외곽 길이를 표현해야 하는지 아이디어를 떠올리는게 메인인 문제였다.
+- 그냥 배열로 바깥쪽 테두리를 표현하면 'ㄷ' 형태의 테두리에서 오답이 발생한다. 따라서 전체 길이를 2배로 만들어줘야 하고 문제를 풀면서 떠올려야 하는 첫 번째 아이디어이다.
+- 2배로 만들어야 하기 때문에 시작점, 목표점, rectagle의 꼭지점 좌표 모두 2배로 만든 후 바깥쪽을 따라 bfs를 해야 답이 나온다.
+- 한 쪽만 2배를 해줘서 오답이 발생했다. 선분을 2배로 만들기 위해 모든 좌표 값을 2배를 해줘야 한다.
